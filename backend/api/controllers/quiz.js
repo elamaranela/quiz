@@ -1,10 +1,10 @@
 
 /**
-* @author     : Pawan Kumar
+* @author     : Elamaran
 * @description: Controller for the CRUD oerations on users
 */
 
-const UserModel = require('../models/user');
+const UserModel = require('../models/quiz');
 const mongoose = require('mongoose');
 const constants = require('../utilities/constants');
 const logger = require('../../utilities/logger');

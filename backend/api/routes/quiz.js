@@ -10,7 +10,7 @@ const quizController = require('../controllers/quiz');
 const requestValidator = require('../middlewares/requestValidator');
 
 router.get('/', quizController.getQuize);
-router.post('/', requestValidator.addOne, quizController.addUser);
+router.post('/', requestValidator.addOne, quizController.addquiz);
 
 router.get('/:id', requestValidator.getOne, userController.getUser);
 router.put('/:id',  userController.updateUser);
