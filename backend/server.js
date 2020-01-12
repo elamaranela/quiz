@@ -1,4 +1,4 @@
-/**
+https://github.com/elamaranela/quiz.git/**
 * @author     : Elamaran
 * @description: server start page
 */
@@ -45,6 +45,6 @@ mongoose.connect(localDB, {useNewUrlParser: true, useCreateIndex: true})  // , a
       });
       require('./api/routes')(app, {});
       app.listen(port, () => {
-        console.log('People Management app listening on port ' + port);
+        console.log('Quiz app listening on port ' + port);
         logger.info('API server has created on port ' + port);
       });
