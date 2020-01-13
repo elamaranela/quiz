@@ -77,13 +77,15 @@ exports.getQuestion = function (req, res) {
     let topicId =req.params.id;
     let unwantedField = { createdAt:0, updatedAt:0, isActive:0, __v:0, _id:0 };
     if (topicId){
-        // query = quizModel.find({topicId: topicId,isActive: true},unwantedField);
-        query =  quizModel.aggregate([
-          { $match: { isActive: true } },
-          { $sample: { size: 1 } },
-          {$limit : 2} 
-      ]);
-      // query = quizModel.aggregate([{ $match: { topicId: 1 } }]).pipeline();
+      console.log('Math.random()',Math.random());
+      var params = {
+        topicId: topicId,
+        isActive: true,
+        rnd: {
+            $gte: Math.random()
+        }
+    };
+        query = quizModel.findOne({ $query: params, $orderby: { rnd: 1 } });
     }
     else{
     query = quizModel.find({isActive: true}, unwantedField);

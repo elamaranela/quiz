@@ -230,3 +230,41 @@
 2020-01-13 22:49:33 info [server.js]: API server has created on port 4000
 2020-01-13 22:49:33 info [server.js]: People DB has connected
 2020-01-13 22:49:33 info [server.js]: getQuestion: Question has been retrived
+2020-01-13 22:49:40 info [server.js]: API server has created on port 4000
+2020-01-13 22:49:40 info [server.js]: People DB has connected
+2020-01-13 22:49:40 info [server.js]: getQuestion: Question has been retrived
+2020-01-13 22:57:47 info [server.js]: API server has created on port 4000
+2020-01-13 22:57:47 info [server.js]: People DB has connected
+2020-01-13 23:00:25 info [server.js]: API server has created on port 4000
+2020-01-13 23:00:25 info [server.js]: People DB has connected
+2020-01-13 23:00:33 info [server.js]: API server has created on port 4000
+2020-01-13 23:00:33 info [server.js]: People DB has connected
+2020-01-13 23:00:55 info [server.js]: API server has created on port 4000
+2020-01-13 23:00:55 info [server.js]: People DB has connected
+2020-01-13 23:00:58 info [server.js]: getQuestion: data empt
+2020-01-13 23:01:17 info [server.js]: API server has created on port 4000
+2020-01-13 23:01:17 info [server.js]: People DB has connected
+2020-01-13 23:01:18 error [server.js]: getQuestion: MongoError: unknown top level operator: $orderby
+2020-01-13 23:04:09 info [server.js]: API server has created on port 4000
+2020-01-13 23:04:09 info [server.js]: People DB has connected
+2020-01-13 23:04:30 info [server.js]: API server has created on port 4000
+2020-01-13 23:04:30 info [server.js]: People DB has connected
+2020-01-13 23:04:30 info [server.js]: getQuestion: Question has been retrived
+2020-01-13 23:04:35 info [server.js]: getQuestion: Question has been retrived
+2020-01-13 23:05:04 info [server.js]: API server has created on port 4000
+2020-01-13 23:05:04 info [server.js]: People DB has connected
+2020-01-13 23:05:04 info [server.js]: getQuestion: Question has been retrived
+2020-01-13 23:05:08 info [server.js]: getQuestion: Question has been retrived
+2020-01-13 23:05:09 info [server.js]: getQuestion: Question has been retrived
+2020-01-13 23:05:19 info [server.js]: API server has created on port 4000
+2020-01-13 23:05:19 info [server.js]: People DB has connected
+2020-01-13 23:05:34 info [server.js]: API server has created on port 4000
+2020-01-13 23:05:34 info [server.js]: People DB has connected
+2020-01-13 23:05:34 info [server.js]: getQuestion: Question has been retrived
+2020-01-13 23:09:05 info [server.js]: API server has created on port 4000
+2020-01-13 23:09:05 info [server.js]: People DB has connected
+2020-01-13 23:09:06 info [server.js]: getQuestion: Question has been retrived
+2020-01-13 23:09:45 info [server.js]: API server has created on port 4000
+2020-01-13 23:09:45 info [server.js]: People DB has connected
+2020-01-13 23:09:47 info [server.js]: getQuestion: data empt
+2020-01-13 23:09:53 info [server.js]: getQuestion: data empt
