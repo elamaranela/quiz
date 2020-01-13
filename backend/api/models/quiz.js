@@ -9,60 +9,20 @@ const Schema = mongoose.Schema;
 
 const QuizSchema = new Schema({
     _id: Schema.Types.ObjectId,
-    name: {
-        firstName:{
+    topicName:String,
+    topicId:{type:Number,
+        required: [true, 'topicId is required']
+    },
+    questionName: {
             type: String,
-            required: [true, 'First name is required'],
+            required: [true, 'question is required'],
         },
-        lastName: String
+    options: {
+        type: Object
     },
-    level: {
-        type: String,
-        required: [true, 'Level is required'],
-    },
-    role: {
-        type: Number, 
-        required: [true, 'Role is required'],
-        validate: {
-            validator: function(v) {
-                return /^[1-5]$/.test(v);
-            },
-            message: 'Invalid role value'
-          }
-    },
-    n1: { 
-        type: String,
-        required: [true, 'N1 employee ID is required'],
-    },
-    gender: {
-        type: String, 
-        enum: ["Female", "Male", "Other"], 
-        required: [true, 'Gender is required'],
-    },
-    employeeId: {
-        type: String,
-        required: [true, 'Employee ID is required'],
-    },
-    dob: {
-        type: Date,
-        required: [true, 'DOB is required in MM-DD-YYYY format'],
-    },
-    doj: {
-        type: Date,
-        required: [true, 'DOJ is required in MM-DD-YYYY format'],
-    },
-    email: {
-        personal: String,
-        company: String
-    },
-    phone: {
-        personal: String,
-        company: String,
-        emergency: String
-    },
-    address: {
-        present: String,
-        permanent: String
+    answer:{
+        type:Array,
+        required: [true, 'Answer is required'],
     },
     isActive: {
         type: Boolean,
@@ -80,10 +40,6 @@ const QuizSchema = new Schema({
     }
 });
 
-userSchema.index({
-    employeeId: 1
-  }, {
-    unique: true,
-  });
 
-module.exports = mongoose.model('User', userSchema);
+
+module.exports = mongoose.model('questions', QuizSchema);

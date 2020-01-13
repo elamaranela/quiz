@@ -1,12 +1,12 @@
-https://github.com/elamaranela/quiz.git/**
-* @author     : Elamaran
+/*https://github.com/elamaranela/quiz.git/**
+ @author     : Elamaran
 * @description: server start page
 */
 
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 4000;
-const morgan = require('morgan');
+// const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const logger = require('./utilities/logger');

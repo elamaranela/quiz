@@ -4,7 +4,7 @@
 * @description: Controller for the CRUD oerations on users
 */
 
-const UserModel = require('../models/quiz');
+const quizModel = require('../models/quiz');
 const mongoose = require('mongoose');
 const constants = require('../utilities/constants');
 const logger = require('../../utilities/logger');
@@ -15,55 +15,32 @@ const moment = require('moment');
   @param req
   @param res
  **/
-exports.addUser = function (req, res) {
-  let request = req.body.user;
+exports.addQuestion = function (req, res) {
+  let request = req.body;
 
-  let newUser = new UserModel({
+  let newquest = new quizModel({
     _id: mongoose.Types.ObjectId(),
-    name: {
-        firstName: request.name.firstName ? request.name.firstName : undefined,
-        lastName: request.name.lastName ? request.name.lastName : "",
-    },
-    level: request.level ? request.level : undefined,
-    role: request.role,
-    n1: request.n1 ? request.n1 : undefined,
-    gender: request.gender,
-    employeeId: request.employeeId ? request.employeeId : undefined,
-    dob: request.dob ? utils.localMMDDYYYYToUTC(request.dob) : undefined,
-    doj: request.doj ? utils.localMMDDYYYYToUTC(request.doj) : undefined,
-    email: {
-        personal: request.email ? request.email.personal : "",
-        company:  request.email ? request.email.company : ""
-    },
-    phone: {
-        personal: request.phone ? request.phone.personal : "",
-        company:  request.phone ? request.phone.company : "",
-        emergency: request.phone ? request.phone.emergency : ""
-    },
-    address: {
-        present: request.address ? request.address.present : "",
-        permanent: request.address ? request.address.permanent : ""
-    },
+ 
+    questionName: request.questionName ? request.questionName : undefined,
+    topicName: request.topicName,
+    topicId: request.topicId ? request.topicId : undefined,
+    options: request.options,
     isActive: true,
+    answer:request.answer,
     createdAt: moment.utc().format(),
     updatedAt: moment.utc().format()
   });
-
-//   UserModel.findOne({employeeId: request.n1}).exec()
-//         .then(users => {
-//             if(users){
-                newUser.save()
-                    .then(result => {
+  newquest.save().then(result => {
                         if (result) {
-                            logger.info('addUser: ' + constants.EMP_ADDED);
-                            res.status(201).json({ message: constants.EMP_ADDED });
+                            logger.info('addQuestion: ' + constants.QUESTION_ADDED);
+                            res.status(201).json({ message: constants.QUESTION_ADDED });
                         } else {
-                            logger.error('addUser: ' + constants.INVALID_INPUT);
+                            logger.error('addQuestion: ' + constants.INVALID_INPUT);
                             res.status(400).json({ message: constants.INVALID_INPUT });
                         }
                     })
                     .catch(function(err) {
-                        logger.error('addUser: ' + err);
+                        logger.error('addQuestion: ' + err);
                         res.status(400).json({ message: constants.INVALID_INPUT });
                     });
 //             }
@@ -78,33 +55,15 @@ exports.addUser = function (req, res) {
 //         });
 }
 
-exports.createUserObject = function(userObj){
-    return {
-        name: {
-            firstName: userObj.name.firstName,
-            lastName: userObj.name.lastName,
-        },
-        level: userObj.level,
-        role: userObj.role,
-        n1: userObj.n1,
-        gender: userObj.gender,
-        employeeId: userObj.employeeId,
-        dob: utils.UTCtoLocalMMDDYYYY(userObj.dob),
-        doj: utils.UTCtoLocalMMDDYYYY(userObj.doj),
-        email: {
-            personal: userObj.email.personal,
-            company:  userObj.email.company
-        },
-        phone: {
-            personal: userObj.phone.personal,
-            company:  userObj.phone.company,
-            emergency: userObj.phone.emergency
-        },
-        address: {
-            present: userObj.address.present,
-            permanent: userObj.address.permanent
-        }
-    }
+exports.createQuestionObject = function(questObj){
+  console.log('hhi ',questObj)
+return {
+  topicName: questObj.topicName,
+  topicId: questObj.topicId,
+  questionName: questObj.questionName,
+  options:questObj.options,
+  answer:questObj.answer
+}
 }
   
 /**
@@ -114,37 +73,45 @@ exports.createUserObject = function(userObj){
    Returns all active users with active subdetails.
    Returns specific user(isActive is not checked) with active subdetails.
   **/
-exports.getUser = function (req, res) {
-    let empId = req.params.id;
+exports.getQuestion = function (req, res) {
+    let topicId =req.params.id;
     let unwantedField = { createdAt:0, updatedAt:0, isActive:0, __v:0, _id:0 };
-    if (empId)
-        query = UserModel.findOne({employeeId: empId}, unwantedField);
-    else
-        query = UserModel.find({isActive: true}, unwantedField);
-
+    if (topicId){
+        // query = quizModel.find({topicId: topicId,isActive: true},unwantedField);
+        query =  quizModel.aggregate([
+          { $match: { isActive: true } },
+          { $sample: { size: 1 } },
+          {$limit : 2} 
+      ]);
+      // query = quizModel.aggregate([{ $match: { topicId: 1 } }]).pipeline();
+    }
+    else{
+    query = quizModel.find({isActive: true}, unwantedField);
+    }
     query.exec()
-        .then(response => {
+        .then(response =>  {
             if (response) {
-                var users = [];
+                var questions = [];
                 // findOne gives null or user object while find results array
-                if(empId){
-                    let userObj = exports.createUserObject(response);
-                    users.push(userObj);
-                }else{
-                    response.map(user => {
-                        let userObj = exports.createUserObject(user);
-                        users.push(userObj);
+                // if(questions){
+                //     let questionsObj = exports.createQuestionObject(response);
+                //     questions.push(questionsObj);
+                // }else{
+                    response.map(question => {
+                        let questionsObj = exports.createQuestionObject(question);
+                        questions.push(questionsObj);
                     })
-                }
-                logger.info('getUser: ' + constants.EMP_RETRIEVED);
-                res.status(200).json({ message: constants.EMP_RETRIEVED, users: users });
+                // }
+                console.log(questions);
+                logger.info('getQuestion: ' + constants.QUESTION_RETRIEVED);
+                res.status(200).json({ message: constants.QUESTION_RETRIEVED, questions: questions });
             } else {
-                res.status(404).json({ message: constants.EMP_UNAVAILABLE });
-                logger.info('getUsers: ' + constants.RESP_EMPTY);
+                res.status(404).json({ message: constants.QUESTION_UNAVAILABLE });
+                logger.info('getQuestion: ' + constants.EMPTY);
             }
         })
         .catch(err => {
-            logger.error('getUser: ' + err);
+            logger.error('getQuestion: ' + err);
             res.status(400).json({ message: constants.INVALID_INPUT });
         });
 }
