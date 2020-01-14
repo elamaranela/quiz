@@ -15,3 +15,7 @@
   "D":"option4"},
   "answer":["A","D"]
 }
+
+# get the random question 
+ * localhost:4000/api/v1/quiz/1
+ 1 is topic

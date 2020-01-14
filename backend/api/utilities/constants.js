@@ -12,5 +12,6 @@ module.exports = {
     INVALID_INPUT: "invalid input",
     QUESTION_ADDED : "Question has been added successfully",
     QUESTION_ERASED : "Question has been deleted successfully",
+    PARTICIPANT_ADDED : "Participant has been added successfully",
     
 }

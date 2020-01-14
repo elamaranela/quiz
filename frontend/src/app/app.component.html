@@ -13,9 +13,76 @@
         </a>
       </li> 
     </ul>
+    
+  
   </div>
 </nav>
+<div >
+ 
+    <div id="surveyElement">
 
+<div  class="sv-root-modern">
+ 
+      <div class="sv_custom_header"></div>
+      <div data-bind="css: css.container" class="sv-container-modern">
+          <div data-bind="css: css.header" class="sv-title sv-container-modern__title">
+              <h3 data-bind="css: css.title">
+             
+<span style="position: static;" data-bind="text: koRenderedHtml">American History</span>
+</h3>
+              <h5 data-bind="css: css.description">
+<span style="position: static;" data-bind="text: koRenderedHtml"></span>
+</h5>
+          </div>
+         
+          <div data-bind="css: css.body" class="sv-body">
+            
+              <div data-bind="attr: { id: startedPage.id }, template: { name: 'survey-page', data: startedPage, afterRender: koAfterRenderPage }" id="sp_100">
+<div data-bind="css: data.css.page.root" class="sv-page sv-body__page">
+  <h4 data-bind="visible: data.showPageTitles, css: data.css.pageTitle" class="sv-title sv-page__title">
+   
+<span style="position: static;" data-bind="text: koRenderedHtml"></span>
+ </h4>
+  <div data-bind="visible: data.showPageTitles, css: data.css.pageDescription" class="sv-description sv-page__description">
+<span style="position: static;" data-bind="text: koRenderedHtml"></span>
+
+  </div>
+<div data-bind="css: panel.cssClasses.row" class="sv-row sv-clearfix">
+<div data-bind="css: question.koRootClass(), style: { paddingLeft: question.paddingLeft, paddingRight: question.paddingRight, width: question.renderWidth }, attr: {id: question.id, name: question.name}" class="sv-question sv-row__question" id="sq_100" name="question1" style="width: 100%;">
+  
+    <div data-bind="css: question.koContentClass" class="sv-question__content">
+
+    <div role="alert" data-bind="visible: errors.length > 0, foreach: { data: errors, as: 'error'}, css: koErrorClass()" class="sv-question__erbox sv-question__erbox--location--top" style="display: none;"></div>
+<div data-bind="html: question.locHtml.koRenderedHtml, css: question.koCss().root">
+  You are about to start quiz by history. <br>You have 10 seconds for every page and 25 seconds for the whole survey of 3 questions.
+  <br>Please click on
+   <b>'Start Quiz'</b> 
+   button when you are ready.</div>
+        <div data-bind="visible: question.hasDescriptionUnderInput, css: koCss().descriptionUnderInput" class="sv-description sv-question__description" style="display: none;"> 
+<span style="position: static;" data-bind="text: koRenderedHtml"></span>
+
+        </div>
+    </div>
+  
+</div>
+</div>
+
+</div>
+</div>
+            
+<div  class="sv-footer sv-body__footer sv-clearfix">
+  <input type="button" value="Start Quiz" routerLink="products" class="sv-btn sv-footer__start-btn">
+</div>
+
+          </div>
+       
+      </div>
+
+</div>
+</div>
+    <div id="surveyResult"></div>
+
+</div>
 <div class="container">
   <router-outlet></router-outlet>
 </div>

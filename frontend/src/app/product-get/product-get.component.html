@@ -10,9 +10,9 @@
 
   <tbody>
       <tr *ngFor="let product of products">
-          <td>{{ product.ProductName }}</td>
-          <td>{{ product.ProductDescription }}</td>
-          <td>{{ product.ProductPrice }}</td>
+          <td>{{ product.questionName }}</td>
+          <td>{{ product.topicId }}</td>
+          <td>{{ product.topicName }}</td>
           <td><a [routerLink]="['/edit', product._id]" class="btn btn-primary">Edit</a></td>
           <td><a (click) = "deleteProduct(product._id)" class="btn btn-danger">Delete</a>
       </tr>

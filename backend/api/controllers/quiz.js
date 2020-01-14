@@ -5,6 +5,7 @@
 */
 
 const quizModel = require('../models/quiz');
+const participantModel = require('../models/participant');
 const mongoose = require('mongoose');
 const constants = require('../utilities/constants');
 const logger = require('../../utilities/logger');
@@ -54,6 +55,32 @@ exports.addQuestion = function (req, res) {
 //             res.status(400).json({ message: constants.INVALID_INPUT });
 //         });
 }
+exports.addparticipant = function (req, res) {
+  console.log('req.body',req.body)
+  let request = req.body;
+  let newparticipant = new participantModel({
+    _id: mongoose.Types.ObjectId(),
+    name: request.Name ? request.Name : undefined,
+    email: request.Email,
+    isActive: true,
+    createdAt: moment.utc().format(),
+   
+  });
+  newparticipant.save().then(result => {
+                        if (result) {
+                          console.log('result',result);
+                            logger.info('addparticipant: ' + constants.PARTICIPANT_ADDED);
+                            res.status(201).json({ message: result });
+                        } else {
+                            logger.error('addparticipant: ' + constants.INVALID_INPUT);
+                            res.status(400).json({ message: constants.INVALID_INPUT });
+                        }
+                    })
+                    .catch(function(err) {
+                        logger.error('addparticipant: ' + err);
+                        res.status(400).json({ message: constants.INVALID_INPUT });
+                    });
+}
 
 exports.createQuestionObject = function(questObj){
   console.log('hhi ',questObj)
@@ -61,6 +88,7 @@ return {
   topicName: questObj.topicName,
   topicId: questObj.topicId,
   questionName: questObj.questionName,
+  questionId: questObj.questionId,
   options:questObj.options,
   answer:questObj.answer
 }
@@ -74,19 +102,22 @@ return {
    Returns specific user(isActive is not checked) with active subdetails.
   **/
 exports.getQuestion = function (req, res) {
-    let topicId =req.params.id;
+    let topicId = parseInt(req.params.id);
     let unwantedField = { createdAt:0, updatedAt:0, isActive:0, __v:0, _id:0 };
-    if (topicId){
+    if (0){
       console.log('Math.random()',Math.random());
-      var params = {
-        topicId: topicId,
-        isActive: true,
-        rnd: {
-            $gte: Math.random()
-        }
-    };
-        query = quizModel.findOne({ $query: params, $orderby: { rnd: 1 } });
+      console.log(typeof topicId);
+    //   var params = {
+    //     topicId: topicId,
+    //     isActive: true,
+    //     rnd: {
+    //         $gte: Math.random()
+    //     }
+    // };
+    //     query = quizModel.findOne({ $query: params, $orderby: { rnd: 1 } });
+    query = quizModel.aggregate([{$match:{topicId:topicId}},{$sample:{size:1}}]);
     }
+
     else{
     query = quizModel.find({isActive: true}, unwantedField);
     }

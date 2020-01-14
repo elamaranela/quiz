@@ -12,5 +12,6 @@ const requestValidator = require('../middlewares/requestValidator');
 router.get('/:id', quizController.getQuestion);
 router.get('/', quizController.getQuestion);
 router.post('/',  quizController.addQuestion);
+router.post('/addparticipant',  quizController.addparticipant);
 
 module.exports = router;
