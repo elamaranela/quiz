@@ -17,7 +17,7 @@ const QuizSchema = new Schema({
             type: String,
             required: [true, 'question is required'],
         },
-        questionId:Number,
+    questionId:Number,
     options: {
         type: Array
     },

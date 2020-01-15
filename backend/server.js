@@ -17,7 +17,8 @@ app.use(bodyParser.json());
 const fs = require('fs');
 const connectionString = fs.readFileSync('./utilities/db.key', 'utf8');
 const localDB = 'mongodb://'+process.env.DB_HOST+process.env.DB_NAME; 
-mongoose.connect(localDB, {useNewUrlParser: true, useCreateIndex: true})  // , autoIndex: false }
+clusterDB = 'mongodb+srv://ela:123@cluster0-3pyyy.mongodb.net/test?retryWrites=true&w=majority';
+mongoose.connect(localDB, {useUnifiedTopology: true,useNewUrlParser: true, useCreateIndex: true})  // , autoIndex: false }
     .then(connect => {
         console.log('People DB has connected');
         logger.info('People DB has connected');

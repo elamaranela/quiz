@@ -27,6 +27,7 @@ exports.addQuestion = function (req, res) {
     topicId: request.topicId ? request.topicId : undefined,
     options: request.options,
     isActive: true,
+    questionId:request.questionId ? request.questionId : undefined,
     answer:request.answer,
     createdAt: moment.utc().format(),
     updatedAt: moment.utc().format()
