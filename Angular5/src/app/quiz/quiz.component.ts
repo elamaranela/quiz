@@ -9,11 +9,12 @@ import { QuizService } from '../shared/quiz.service';
 })
 export class QuizComponent implements OnInit {
 
-  constructor(private router: Router, private quizService: QuizService) { }
+  constructor(private router: Router, public quizService: QuizService) { }
 
   ngOnInit() {
     if (parseInt(localStorage.getItem('seconds')) > 0) {
       console.log('iam insude ngonint');
+      this.quizService.button = 'Next'
       this.quizService.seconds = parseInt(localStorage.getItem('seconds'));
       this.quizService.qnProgress = parseInt(localStorage.getItem('qnProgress'));
       this.quizService.qns[1] = JSON.parse(localStorage.getItem('qns'));
@@ -28,8 +29,8 @@ export class QuizComponent implements OnInit {
       this.quizService.qnProgress = 0;
       this.quizService.getQuestions().subscribe(
         (data: any) => {
+          this.quizService.button = 'Next'
           this.quizService.qns = Object.keys(data).map((k) => data[k]);// data;
-          console.log('this.quizService.qns',this.quizService.qns)
           this.startTimer();
         }
       );
@@ -44,14 +45,31 @@ export class QuizComponent implements OnInit {
   }
 
   Answer(qID, choice) {
-    this.quizService.qns[1][this.quizService.qnProgress].answer = choice;
+    this.quizService.qns[1][this.quizService.qnProgress].userAnswer = choice;
     localStorage.setItem('qns', JSON.stringify(this.quizService.qns));
     this.quizService.qnProgress++;
     localStorage.setItem('qnProgress', this.quizService.qnProgress.toString());
+    if(this.quizService.qnProgress == 9){
+      this.quizService.button = 'Complete'
+    }
     if (this.quizService.qnProgress == 10) {
       clearInterval(this.quizService.timer);
       this.router.navigate(['/result']);
     }
   }
+  Previous(qID, choice) {
+    this.quizService.qns[1][this.quizService.qnProgress].userAnswer = choice;
+    const savedData = JSON.parse(localStorage.getItem('qns'));
+    this.quizService.qnProgress--;
+    this.quizService.qns[1][this.quizService.qnProgress] = savedData[1][this.quizService.qnProgress];
+    
+    if (this.quizService.qnProgress == 10) {
+      clearInterval(this.quizService.timer);
+      this.router.navigate(['/result']);
+    }
+  }
+  onAnswerChange(value){
+    this.quizService.userAnswer = value;
+ }
 
 }

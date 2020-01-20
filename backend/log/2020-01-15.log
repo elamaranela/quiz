@@ -96,3 +96,81 @@
 2020-01-15 15:29:41 info [server.js]: People DB has connected
 2020-01-15 15:30:18 info [server.js]: API server has created on port 4000
 2020-01-15 15:30:18 info [server.js]: People DB has connected
+2020-01-15 15:30:30 info [server.js]: API server has created on port 4000
+2020-01-15 15:30:30 info [server.js]: People DB has connected
+2020-01-15 15:31:03 info [server.js]: addQuestion: Question has been added successfully
+2020-01-15 15:31:21 info [server.js]: addQuestion: Question has been added successfully
+2020-01-15 15:31:30 info [server.js]: addQuestion: Question has been added successfully
+2020-01-15 15:31:38 info [server.js]: addQuestion: Question has been added successfully
+2020-01-15 15:31:44 info [server.js]: addQuestion: Question has been added successfully
+2020-01-15 15:31:50 info [server.js]: addQuestion: Question has been added successfully
+2020-01-15 15:31:59 info [server.js]: addQuestion: Question has been added successfully
+2020-01-15 15:32:06 info [server.js]: addQuestion: Question has been added successfully
+2020-01-15 15:32:23 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 15:32:23 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 15:33:22 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 15:33:22 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 15:48:07 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 15:48:08 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 15:52:27 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 15:52:27 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 15:53:21 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 15:53:22 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 15:58:36 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 15:58:36 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 16:07:31 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 16:07:31 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 16:10:45 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 16:10:45 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 16:12:27 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 16:12:27 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 16:15:28 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 16:15:28 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 16:16:14 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 16:16:14 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 16:17:29 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 16:17:29 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 16:22:44 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 16:22:44 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 16:24:35 info [server.js]: addQuestion: Question has been added successfully
+2020-01-15 16:24:45 info [server.js]: addQuestion: Question has been added successfully
+2020-01-15 16:24:54 info [server.js]: addQuestion: Question has been added successfully
+2020-01-15 16:25:02 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 16:25:02 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 16:25:23 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 16:25:23 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 16:26:21 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 16:26:21 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 16:27:24 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 16:27:24 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 16:28:31 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 16:28:32 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 16:29:06 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 16:30:57 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 16:30:57 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 17:06:09 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 17:06:09 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 17:08:58 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 17:08:58 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 17:09:46 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 17:09:46 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 17:10:18 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 17:11:16 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 17:11:16 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 17:14:24 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 17:14:24 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 17:17:46 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 17:17:46 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 17:18:34 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 17:18:34 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 17:20:07 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 17:20:07 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 17:20:36 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 17:20:36 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 17:21:20 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-15 17:21:20 info [server.js]: getQuestion: Question has been retrived
+2020-01-15 17:25:51 info [server.js]: getQuestion: Question has been retrived
+2020-01-20 12:55:20 info [server.js]: getQuestion: Question has been retrived
+2020-01-20 12:56:28 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-20 12:56:28 info [server.js]: getQuestion: Question has been retrived
+2020-01-20 13:00:54 info [server.js]: getQuestion: Question has been retrived

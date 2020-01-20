@@ -1,30 +1,49 @@
 <app-navbar></app-navbar>
-{{this.quizService.qnProgress}}
+
 <!-- {{quizService.qns}} -->
-<div class="row" *ngIf="quizService.qns && this.quizService.qnProgress != 10">
+<div class="row" *ngIf="this.quizService.qns && this.quizService.qnProgress != 10">
   <div class="col s8 offset-s2">
     <span>Time Elapsed : {{quizService.displayTimeElapsed()}}</span>
     <div class="progress">
       <div class="determinate" [style.width.%]="(quizService.qnProgress+1)*10"></div>
     </div>
-    <div class="card blue-grey darken-1">
+    <div class="card ">
+    <div class="blue-grey darken-1">
       <div class="card-content white-text">
-        <span class="card-title">{{quizService.qnProgress+1}}</span>
+        <span class="card-title">{{quizService.qnProgress+1}}/10</span>
         <p>{{quizService.qns[1][quizService.qnProgress].questionName}}</p>
         <!-- <div *ngIf="quizService.qns[quizService.qnProgress].ImageName!=null">
           <img class="center" [src]="quizService.rootUrl+'/Images/'+quizService.qns[quizService.qnProgress].ImageName" style="width:350px;height:200px">
         </div> -->
-      </div>
-      <div class="card-action">
-        <ul class="collection answer">
+      </div></div>
+      <div class="card-action white-text">
+        <ul class="collection">
           <ng-container *ngFor="let option of quizService.qns[1][quizService.qnProgress].options;let i = index">
-            <li *ngIf="option != null" class="collection-item" (click)="Answer(quizService.qns[1][quizService.qnProgress].questionId,i)">
-              {{option}}
+            <li *ngIf="option != null" class="collection-item">
+          
+                      <label>
+                          <input class="with-gap" type="radio" name="{{quizService.qns[1][quizService.qnProgress].questionId}}" value="{{i}}"
+                          [(ngModel)]="quizService.qns[1][quizService.qnProgress].userAnswer"
+                          (ngModelChange)="onAnswerChange($event)" >
+                  <span >{{option}}</span>
+                </label>
+       
             </li>
           </ng-container>
         </ul>
       </div>
+      
     </div>
-
+    <div>
+        <button *ngIf="this.quizService.qnProgress >= 1" class="btn waves-effect waves-light" type="submit" name="action" (click)="Previous(quizService.qns[1][quizService.qnProgress].questionId,quizService.userAnswer)">
+            <i class="chevron_left left">Previous</i>
+          </button>
+          <button class="btn waves-effect waves-light" type="submit" name="action"  [(ngModel)]="quizService.button" value="Next" (click)="Answer(quizService.qns[1][quizService.qnProgress].questionId,quizService.userAnswer)">
+              <i class="chevron_right right">{{quizService.button}}</i>
+            </button>
+        <!-- <input *ngIf="this.quizService.qnProgress >= 1" type="button"  value="Previous" (click)="Previous(quizService.qns[1][quizService.qnProgress].questionId,quizService.userAnswer)"  class="sv-btn sv-footer__prev-btn" > -->
+        <!-- <input *ngIf="10 > this.quizService.qnProgress" type="button"   (click)="Answer(quizService.qns[1][quizService.qnProgress].questionId,quizService.userAnswer)" class="sv-btn sv-footer__next-btn">
+        <input *ngIf="this.quizService.qnProgress == 10" type="button"  value="Complete" class="sv-btn sv-footer__complete-btn" style="display: none;"> -->
+    </div>
   </div>
 </div>

@@ -8,7 +8,9 @@ export class QuizService {
   qns: any[];
   seconds: number;
   timer;
+  button:String;
   qnProgress: number;
+  userAnswer:number;
   correctAnswerCount: number = 0;
 
   //---------------- Helper Methods---------------
