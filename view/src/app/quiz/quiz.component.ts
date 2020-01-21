@@ -67,7 +67,9 @@ export class QuizComponent implements OnInit {
     const savedData = JSON.parse(localStorage.getItem('qns'));
     this.quizService.qnProgress--;
     this.quizService.qns[1][this.quizService.qnProgress] = savedData[1][this.quizService.qnProgress];
-    
+    if(this.quizService.qns[1][this.quizService.qnProgress].answer['0'] == this.quizService.answer[choice]){
+      this.quizService.correctAnswerCount--
+    }
     if (this.quizService.qnProgress == 10) {
       clearInterval(this.quizService.timer);
       this.router.navigate(['/result']);

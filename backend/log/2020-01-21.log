@@ -1,1 +1,32 @@
 2020-01-21 13:56:13 info [server.js]: API server has created on port 4000
+2020-01-21 13:56:15 info [server.js]: People DB has connected
+2020-01-21 14:21:24 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-21 14:21:25 info [server.js]: getQuestion: Question has been retrived
+2020-01-21 14:23:04 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-21 14:23:04 info [server.js]: getQuestion: Question has been retrived
+2020-01-21 14:23:28 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-21 14:23:28 info [server.js]: getQuestion: Question has been retrived
+2020-01-21 14:26:53 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-21 14:26:53 info [server.js]: getQuestion: Question has been retrived
+2020-01-21 14:35:13 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-21 14:35:13 info [server.js]: getQuestion: Question has been retrived
+2020-01-21 15:57:53 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-21 15:57:53 info [server.js]: getQuestion: Question has been retrived
+2020-01-21 16:23:21 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-21 16:24:04 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-21 16:24:05 info [server.js]: getQuestion: Question has been retrived
+2020-01-21 16:26:17 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-21 16:26:19 info [server.js]: getQuestion: Question has been retrived
+2020-01-21 16:46:21 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-21 16:46:24 info [server.js]: getQuestion: Question has been retrived
+2020-01-21 16:47:51 info [server.js]: getQuestion: Question has been retrived
+2020-01-21 16:51:31 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-21 16:51:33 info [server.js]: getQuestion: Question has been retrived
+2020-01-21 17:18:11 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-21 17:18:15 info [server.js]: getQuestion: Question has been retrived
+2020-01-21 17:27:52 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-21 17:27:53 info [server.js]: getQuestion: Question has been retrived
+2020-01-21 17:29:22 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-21 17:29:24 info [server.js]: getQuestion: Question has been retrived
+2020-01-21 17:53:56 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-21 17:54:02 info [server.js]: getQuestion: Question has been retrived
