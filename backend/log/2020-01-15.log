@@ -174,3 +174,5 @@
 2020-01-20 12:56:28 info [server.js]: addparticipant: Participant has been added successfully
 2020-01-20 12:56:28 info [server.js]: getQuestion: Question has been retrived
 2020-01-20 13:00:54 info [server.js]: getQuestion: Question has been retrived
+2020-01-20 20:50:03 info [server.js]: addparticipant: Participant has been added successfully
+2020-01-20 20:50:04 info [server.js]: getQuestion: Question has been retrived
