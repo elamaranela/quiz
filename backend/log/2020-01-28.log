@@ -1,0 +1,26 @@
+2020-01-28 17:54:17 info [server.js]: API server has created on port 4000
+2020-01-28 17:54:47 info [server.js]: Server selection timed out after 30000 ms
+2020-01-28 18:01:21 info [server.js]: API server has created on port 4000
+2020-01-28 18:01:50 info [server.js]: Server selection timed out after 30000 ms
+2020-01-28 19:14:25 info [server.js]: API server has created on port 4000
+2020-01-28 19:14:33 info [server.js]: API server has created on port 4000
+2020-01-28 19:15:02 info [server.js]: Server selection timed out after 30000 ms
+2020-01-28 19:31:59 info [server.js]: API server has created on port 4000
+2020-01-28 19:31:59 info [server.js]: People DB has connected
+2020-01-28 19:32:07 info [server.js]: getQuestion: Question has been retrived
+2020-01-28 19:35:52 info [server.js]: API server has created on port 4000
+2020-01-28 19:35:52 info [server.js]: People DB has connected
+2020-01-28 21:18:53 info [server.js]: API server has created on port 4000
+2020-01-28 21:18:53 info [server.js]: People DB has connected
+2020-01-28 21:23:41 info [server.js]: API server has created on port 4000
+2020-01-28 21:23:41 info [server.js]: People DB has connected
+2020-01-28 21:25:41 info [server.js]: API server has created on port 4000
+2020-01-28 21:25:41 info [server.js]: People DB has connected
+2020-01-28 21:26:46 info [server.js]: API server has created on port 4000
+2020-01-28 21:26:46 info [server.js]: People DB has connected
+2020-01-28 21:27:13 info [server.js]: API server has created on port 4000
+2020-01-28 21:27:13 info [server.js]: People DB has connected
+2020-01-28 21:27:28 info [server.js]: API server has created on port 4000
+2020-01-28 21:27:28 info [server.js]: People DB has connected
+2020-01-28 21:33:53 info [server.js]: API server has created on port 4000
+2020-01-28 21:33:53 info [server.js]: People DB has connected

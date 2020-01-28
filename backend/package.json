@@ -19,8 +19,12 @@
     "kafka-node": "^5.0.0",
     "moment": "^2.24.0",
     "mongoose": "^5.5.12",
+    "multer": "^1.1.0",
+    "morgan": "^1.9.1",
     "winston": "^3.2.1",
-    "winston-daily-rotate-file": "^3.9.0"
+    "winston-daily-rotate-file": "^3.9.0",
+    "xls-to-json-lc": "^0.3.4",
+    "xlsx-to-json-lc": "^0.5.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"

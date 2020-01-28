@@ -4,10 +4,11 @@
 */
 
 const quizRoutes = require('./quiz');
-
+const uploads = require('./uploads');
 
 module.exports = function (app) {
     app.use('/api/v1/quiz', quizRoutes);
+    app.use('/api/v1/quiz/uploads', uploads);
 
     // Executes if invalid route is triggered
     app.use((req, res, next) => {
