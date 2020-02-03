@@ -10,10 +10,23 @@ const moment = require('moment');
 
 exports.validator = async (userObj) => {
 
-  const saveStatus = userObj.map(async (data) => {
-    console.log()
-  })
-
+  const saveStatus = userObj.filter((data) => data.answer !== '').map(async (request) => {
+   const questions={
+    questionName: request.question ? request.question : undefined,
+    topicName: request.topic,
+    topicId: request.topic ? request.topic : undefined,
+    options: [request.a,request.b,request.c,request.d],
+    isActive: true,
+    questionId:request.questionId ? request.questionId : undefined,
+    answer:request.answer,
+    createdAt: moment.utc().format(),
+    updatedAt: moment.utc().format(),
+};
+return questions
+   
+  });
+ 
+  return  await Promise.all(saveStatus)
 }
 
 validate = async (data) => {
@@ -21,7 +34,7 @@ validate = async (data) => {
     const isEmpIdExit = await validateEmpId(data.employeeId);
     if (isEmpIdExit) {
       // const emailCheck = await validateEmail(data.email);
-      data.type = 'users';
+      data.type = 'questions';
      
       return data;
     }

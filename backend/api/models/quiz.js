@@ -10,7 +10,7 @@ const Schema = mongoose.Schema;
 const QuizSchema = new Schema({
     _id: Schema.Types.ObjectId,
     topicName:String,
-    topicId:{type:Number,
+    topicId:{ type:Number,
         required: [true, 'topicId is required']
     },
     questionName: {

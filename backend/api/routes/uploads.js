@@ -10,6 +10,6 @@ const uploadController = require('../controllers/uploads');
 const quizController = require('../controllers/quiz');
 
 
-router.post('/onetimeupload', uploadController.onetimeupload );
+router.post('/onetimeupload', uploadController.onetimeupload, quizController.addBulk);
 
 module.exports = router;

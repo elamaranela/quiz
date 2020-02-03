@@ -45,16 +45,7 @@ exports.addQuestion = function (req, res) {
                         logger.error('addQuestion: ' + err);
                         res.status(400).json({ message: constants.INVALID_INPUT });
                     });
-//             }
-//             else{
-//                 logger.error('addUser: Invalid N1');
-//                 res.status(404).json({ message: "N1 employee not found" });
-//             }
-//         })
-//         .catch(err => {
-//             logger.error('addUser: ' + err);
-//             res.status(400).json({ message: constants.INVALID_INPUT });
-//         });
+
 }
 exports.addparticipant = function (req, res) {
   console.log('req.body',req.body)
@@ -103,11 +94,12 @@ return {
    Returns specific user(isActive is not checked) with active subdetails.
   **/
 exports.getQuestion = function (req, res) {
-    let topicId = parseInt(req.params.id);
+    let topicnumber = req.params.id;
     let unwantedField = { createdAt:0, updatedAt:0, isActive:0, __v:0, _id:0 };
-    if (0){
+    if (1){
       console.log('Math.random()',Math.random());
-      console.log(typeof topicId);
+      console.log(typeof topicnumber);
+      console.log(topicnumber);
     //   var params = {
     //     topicId: topicId,
     //     isActive: true,
@@ -116,7 +108,7 @@ exports.getQuestion = function (req, res) {
     //     }
     // };
     //     query = quizModel.findOne({ $query: params, $orderby: { rnd: 1 } });
-    query = quizModel.aggregate([{$match:{topicId:topicId}},{$sample:{size:1}}]);
+    query = quizModel.aggregate([{$match:{topicId:topicnumber,isActive: true}},{$sample:{size:10}}]);
     }
 
     else{
@@ -212,15 +204,17 @@ exports.deleteUser = function (req, res) {
         res.status(500).json({ error: constants.UNEXPECTED_ERROR });
       });
   }
-  exports.addBulkUser = function (req, res) {
-    const errorList = req.IncorrectData; 
-  UserModel.collection.insert(req.body,function (err, docs) {
+  exports.addBulk = function (req, res) {
+    // const errorList = req.IncorrectData; 
+    // const errorList = ''; 
+    quizModel.collection.insert(req.body,function (err, docs) {
       if (err){ 
           return console.error(err);
       } else {
-        console.info('%d Users were successfully stored.', docs.insertedCount);
+        console.info('%d Questions were successfully stored.', docs.insertedCount);
+        console.log('%d Questions were successfully stored.', docs.insertedCount);
         
-        res.json({message: `${docs.insertedCount} Users were successfully stored.`, error:(errorList)?{message:`${errorList.length} users not inserted `,data:req.IncorrectData} :''})
+        res.json({message: `${docs.insertedCount} quetions were successfully stored.`})
       }
     });
 }

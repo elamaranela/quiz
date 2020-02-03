@@ -49,7 +49,7 @@ exports.onetimeupload = (req, res,next)=>{
         } else {
             exceltojson = xlstojson;
         }
-        console.log(req.file.path);
+       
         try {
             exceltojson({
                 input: req.file.path,
@@ -61,16 +61,15 @@ exports.onetimeupload = (req, res,next)=>{
                 } 
                validator.validator(result).then((ret)=>{
 
-                if(ret.users){
-                    req.body = ret.users;
-                    req.IncorrectData = ret.error;
-                    next();
-                }else{
-                    res.status(204);
-                    res.json({message:'NO new user to add please check the file'}); 
-                }
-
-              
+               console.log('final result',ret);
+               if(ret){
+                req.body = ret;
+                // req.IncorrectData = ret.error;
+                next();
+            }else{
+                res.status(204);
+                res.json({message:'NO new data to add please check the file'}); 
+            }
                 });
             });
         } catch (e){
