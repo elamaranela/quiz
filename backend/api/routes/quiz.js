@@ -13,5 +13,6 @@ router.get('/:id', quizController.getQuestion);
 router.get('/', quizController.getQuestion);
 router.post('/',  quizController.addQuestion);
 router.post('/addparticipant',  quizController.addparticipant);
+router.post('/UpdateOutput',  quizController.UpdateOutput);
 
 module.exports = router;

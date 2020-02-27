@@ -47,8 +47,8 @@ export class QuizComponent implements OnInit {
   Answer(qID, choice) {
     this.quizService.qns[1][this.quizService.qnProgress].userAnswer = choice;
     console.log(' this.quizService.answer[choice])', this.quizService.answer[choice])
-    console.log(' this.quizService.qns[1][this.quizService.qnProgress].answer[]', this.quizService.qns[1][this.quizService.qnProgress].answer['0'])
-    if(this.quizService.qns[1][this.quizService.qnProgress].answer['0'] == this.quizService.answer[choice]){
+    console.log(' this.quizService.qns[1][this.quizService.qnProgress].answer[]', this.quizService.qns[1][this.quizService.qnProgress].answer)
+    if(this.quizService.qns[1][this.quizService.qnProgress].answer.toLowerCase() == this.quizService.answer[choice]){
       this.quizService.correctAnswerCount++
     }
     localStorage.setItem('qns', JSON.stringify(this.quizService.qns));
@@ -67,7 +67,7 @@ export class QuizComponent implements OnInit {
     const savedData = JSON.parse(localStorage.getItem('qns'));
     this.quizService.qnProgress--;
     this.quizService.qns[1][this.quizService.qnProgress] = savedData[1][this.quizService.qnProgress];
-    if(this.quizService.qns[1][this.quizService.qnProgress].answer['0'] == this.quizService.answer[choice]){
+    if(this.quizService.qns[1][this.quizService.qnProgress].answer.toLowerCase() == this.quizService.answer[choice]){
       this.quizService.correctAnswerCount--
     }
     if (this.quizService.qnProgress == 10) {

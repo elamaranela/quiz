@@ -6,6 +6,7 @@
 
 const quizModel = require('../models/quiz');
 const participantModel = require('../models/participant');
+const resultModel = require('../models/result');
 const mongoose = require('mongoose');
 const constants = require('../utilities/constants');
 const logger = require('../../utilities/logger');
@@ -147,34 +148,33 @@ exports.getQuestion = function (req, res) {
   @param req
   @param res
  **/
-exports.updateUser = function (req, res) {
+exports.UpdateOutput = function (req, res) {
+  console.log('UpdateOutput-->',req.body)
   let request = req.body;
-  let userDetails = {};
-  request.level ? userDetails.level = request.level : '';
-  request.role ? userDetails.role = request.role : '';
-  request.n1 ? userDetails.n1 = request.n1 : '';
-  request.email ? userDetails.email = request.email : '';
-  request.phone ? userDetails.phone = request.phone : '';
-  request.address ? userDetails.address = request.address : '';
-  userDetails.updatedAt = moment.utc().format();
-  
-  let updatedUser = new UserModel(userDetails);
-
-  UserModel.findByIdAndUpdate(
-    req.params.id, { $set: updatedUser }, { new: true }).exec()  
-    .then(updateResponse => {
-      if (updateResponse) {
-        logger.error('updateUser: ' + req.params.id + ' - ' + constants.EMP_UPDATED);
-        res.status(200).json({ message: constants.EMP_UPDATED });
-      } else {
-        res.status(400).json({ message: constants.EMP_UNAVAILABLE });
-        logger.info('updateUser: ' + constants.EMP_UNAVAILABLE);
-      }
-    })
-    .catch(err => {
-      logger.error('updateUser: ' + err);
-      res.status(500).json({ error: constants.UNEXPECTED_ERROR });
-    });
+  let resultDetails = {};
+  resultDetails._id = mongoose.Types.ObjectId(),
+  resultDetails.ref_id = request.message._id ? request.message._id : '';
+  resultDetails.name = request.message.name ? request.message.name : '';
+  resultDetails.email = request.message.email ? request.message.email : '';
+  resultDetails.score = request.Score ? request.Score : '';
+  resultDetails.timespent = request.TimeSpent ? request.TimeSpent : '';
+  resultDetails.isActive=  true;
+  resultDetails.createdAt = moment.utc().format();
+  newresult = new resultModel(resultDetails);
+  newresult.save().then(result => {
+    if (result) {
+      console.log('result',result);
+        logger.info('addparticipant: ' + constants.PARTICIPANT_ADDED);
+        res.status(201).json({ message: result });
+    } else {
+        logger.error('addparticipant: ' + constants.INVALID_INPUT);
+        res.status(400).json({ message: constants.INVALID_INPUT });
+    }
+})
+.catch(function(err) {
+    logger.error('addparticipant: ' + err);
+    res.status(400).json({ message: constants.INVALID_INPUT });
+});
 }
 
 /**

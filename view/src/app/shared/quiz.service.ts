@@ -49,7 +49,7 @@ export class QuizService {
     var body = JSON.parse(localStorage.getItem('participant'));
     body.Score = this.correctAnswerCount;
     body.TimeSpent = this.seconds;
-    return this.http.post(this.rootUrl + "/api/UpdateOutput", body);
+    return this.http.post(this.rootUrl + "/UpdateOutput", body);
   }
 
 }

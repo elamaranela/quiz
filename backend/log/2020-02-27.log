@@ -1,0 +1,36 @@
+2020-02-27 20:32:58 info [server.js]: API server has created on port 4000
+2020-02-27 20:32:58 info [server.js]: People DB has connected
+2020-02-27 20:42:57 info [server.js]: addparticipant: Participant has been added successfully
+2020-02-27 20:43:00 info [server.js]: getQuestion: Question has been retrived
+2020-02-27 20:45:39 info [server.js]: API server has created on port 4000
+2020-02-27 20:45:39 info [server.js]: People DB has connected
+2020-02-27 20:47:00 info [server.js]: addparticipant: Participant has been added successfully
+2020-02-27 20:47:01 info [server.js]: getQuestion: Question has been retrived
+2020-02-27 20:47:50 info [server.js]: addparticipant: Participant has been added successfully
+2020-02-27 20:47:51 info [server.js]: getQuestion: Question has been retrived
+2020-02-27 20:57:58 info [server.js]: addparticipant: Participant has been added successfully
+2020-02-27 20:58:00 info [server.js]: getQuestion: Question has been retrived
+2020-02-27 21:00:09 info [server.js]: addparticipant: Participant has been added successfully
+2020-02-27 21:00:10 info [server.js]: getQuestion: Question has been retrived
+2020-02-27 21:01:50 info [server.js]: addparticipant: Participant has been added successfully
+2020-02-27 21:01:51 info [server.js]: getQuestion: Question has been retrived
+2020-02-27 21:05:53 info [server.js]: addparticipant: Participant has been added successfully
+2020-02-27 21:05:55 info [server.js]: getQuestion: Question has been retrived
+2020-02-27 21:11:43 info [server.js]: API server has created on port 4000
+2020-02-27 21:11:43 info [server.js]: People DB has connected
+2020-02-27 21:13:36 info [server.js]: API server has created on port 4000
+2020-02-27 21:13:36 info [server.js]: People DB has connected
+2020-02-27 21:13:45 info [server.js]: API server has created on port 4000
+2020-02-27 21:13:45 info [server.js]: People DB has connected
+2020-02-27 21:18:51 info [server.js]: API server has created on port 4000
+2020-02-27 21:18:51 info [server.js]: People DB has connected
+2020-02-27 21:23:10 info [server.js]: API server has created on port 4000
+2020-02-27 21:23:10 info [server.js]: People DB has connected
+2020-02-27 21:30:33 info [server.js]: API server has created on port 4000
+2020-02-27 21:30:33 info [server.js]: People DB has connected
+2020-02-27 21:30:37 error [server.js]: addparticipant: MongooseError: document must have an _id before saving
+2020-02-27 21:32:04 info [server.js]: API server has created on port 4000
+2020-02-27 21:32:04 info [server.js]: People DB has connected
+2020-02-27 21:32:09 info [server.js]: addparticipant: Participant has been added successfully
+2020-02-27 21:32:40 info [server.js]: addparticipant: Participant has been added successfully
+2020-02-27 21:32:40 info [server.js]: getQuestion: Question has been retrived

@@ -1,0 +1,13 @@
+2020-02-25 13:39:51 info [server.js]: API server has created on port 4000
+2020-02-25 13:39:52 info [server.js]: People DB has connected
+2020-02-25 13:44:05 info [server.js]: addparticipant: Participant has been added successfully
+2020-02-25 13:44:08 info [server.js]: getQuestion: Question has been retrived
+2020-02-25 15:25:38 error [server.js]: addparticipant: MongooseTimeoutError: Server selection timed out after 30000 ms
+2020-02-25 15:25:44 error [server.js]: addparticipant: MongooseTimeoutError: Server selection timed out after 30000 ms
+2020-02-25 15:32:06 error [server.js]: addparticipant: MongooseTimeoutError: Server selection timed out after 30000 ms
+2020-02-25 15:32:09 error [server.js]: addparticipant: MongooseTimeoutError: Server selection timed out after 30000 ms
+2020-02-25 15:32:10 error [server.js]: addparticipant: MongooseTimeoutError: Server selection timed out after 30000 ms
+2020-02-25 17:20:29 error [server.js]: addparticipant: MongooseTimeoutError: Server selection timed out after 30000 ms
+2020-02-25 17:20:33 error [server.js]: addparticipant: MongooseTimeoutError: Server selection timed out after 30000 ms
+2020-02-25 17:20:36 error [server.js]: addparticipant: MongooseTimeoutError: Server selection timed out after 30000 ms
+2020-02-25 17:20:36 error [server.js]: addparticipant: MongooseTimeoutError: Server selection timed out after 30000 ms
