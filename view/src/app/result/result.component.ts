@@ -37,7 +37,9 @@ export class ResultComponent implements OnInit {
 
   OnSubmit() {
     this.quizService.submitScore().subscribe(() => {
-      this.restart();
+      localStorage.clear();
+    clearInterval(this.quizService.timer);
+    this.router.navigate(['/register']);
     });
   }
 
